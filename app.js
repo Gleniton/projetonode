@@ -26,7 +26,7 @@ app.get('/sorteio', function (req, res) {
         let novaTabela = tabela.gerarTabela(qtdNumerosSorteio, minSorteio, maxSorteio);
         tabelas.push(novaTabela);
     }
-    console.log(tabelas);
+
     res.render("sorteio_tabela", { title: "Sorteio", tabelas : tabelas});
 });
 
@@ -43,7 +43,6 @@ app.get('/usuario', function (req, res) {
     axios.get('https://randomuser.me/api')
     .then(response => {
       usuario = response.data.results[0];
-      console.log(usuario);
       res.render("usuario", { title: "Usuario", usuario : usuario});
     })
     .catch(error => {
@@ -51,6 +50,4 @@ app.get('/usuario', function (req, res) {
     });
 });
 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
-});
+app.listen(3000);
