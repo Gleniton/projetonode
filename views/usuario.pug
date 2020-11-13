@@ -1,0 +1,50 @@
+extends layout
+
+block layout-content
+  div.container
+    if (err)
+      p= err
+    if (!err)
+      table(style='width:100%', border='1')
+        tr(rowspan="3")
+          td(colspan="2")
+            img(src=usuario.picture.large)
+        tr
+          td Gênero
+          td= usuario.gender == 'male' ? 'Masculino' : 'Feminino'
+        tr
+          td Nome
+          td= usuario.name.title + ' ' + usuario.name.first + ' ' + usuario.name.last
+        tr
+          td Telefone
+          td= usuario.phone
+        tr
+          td Celular
+          td= usuario.cell
+        tr
+          td Email
+          td= usuario.email
+        tr
+          td Naturalidade
+          td= usuario.nat
+        tr
+          td Rua
+          td= usuario.location.street.name + ', ' + usuario.location.street.number
+        tr
+          td Cidade
+          td= usuario.location.city
+        tr
+          td Estado
+          td= usuario.location.state
+        tr
+          td País
+          td= usuario.location.country
+        tr
+          td Código Postal
+          td= usuario.location.postcode
+        tr
+          td Coordenadas
+          td= usuario.location.coordinates.latitude + ', ' + usuario.location.coordinates.longitude
+        tr
+          td Fuso Horário
+          td= usuario.location.timezone.description + '(' + usuario.location.timezone.offset + ')'

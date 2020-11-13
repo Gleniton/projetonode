@@ -1,0 +1,21 @@
+
+block variables
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    link(rel="shortcut icon", href="/favicon.ico")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="theme-color", content="#000000")
+    title #{title}
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Nunito:200,600")
+    link(rel="stylesheet" href="/css/app.css")
+
+  body
+    div#root
+    div(class="flex-center position-ref full-height")
+      if path !== '/'
+        div(class="top-right links")
+          a(href="/") Menu
+      div(class="content")
+        block layout-content

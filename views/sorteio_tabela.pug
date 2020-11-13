@@ -1,0 +1,10 @@
+extends sorteio
+
+block tabela-sorteio
+  table(style='width:100%', border='1')
+    tr
+      th(colspan="10") Sorteio
+    - for (var celula = 0; celula < 60; celula++)
+        - if(celula == 0 || (celula) % 10 == 0)
+            tr
+        td(class = (tabela.includes((celula+1)) ? 'marcado' : '') ) #{celula+1}
